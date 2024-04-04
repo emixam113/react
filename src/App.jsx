@@ -1,24 +1,22 @@
 import { useState } from 'react'
 import './App.css'
 import PokemonCard from './components/PokemonCard'
+import NavBar from './components/NavBar'
 
 function App() {
 
   const [pokemonIndex, setPokemonIndex] = useState(0);
- const handleClick = (event) => {
+  const handleClick = (event) => {
   
 event.target.textContent === 'Précédent' ? setPokemonIndex(pokemonIndex-1): setPokemonIndex(pokemonIndex+1);
  }
 
   return (
    <div>
+    <NavBar pokemonIndex={pokemonIndex} setPokemonIndex={setPokemonIndex} pokemonList={pokemonList}/>
       <PokemonCard pokemon={pokemonList[pokemonIndex]}/>
 
-    {pokemonIndex > 0 ? <button onClick = {handleClick}>Précédent</button> : <button onClick = {handleClick} disabled>Précédent</button>}
-
-    {pokemonIndex < pokemonList.length-1 ? <button onClick = {handleClick}>Suivant</button>: <button onClick = {handleClick} disabled >Suivant</button> }
-      <p>{pokemonIndex}</p>
-
+    
     </div>
   )
 }
