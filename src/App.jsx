@@ -11,14 +11,13 @@ function App() {
 event.target.textContent === 'Précédent' ? setPokemonIndex(pokemonIndex-1): setPokemonIndex(pokemonIndex+1);
  }
 
+
   return (
    <div>
-    <NavBar pokemonIndex={pokemonIndex} setPokemonIndex={setPokemonIndex} pokemonList={pokemonList}/>
-      <PokemonCard pokemon={pokemonList[pokemonIndex]}/>
-
-    
-    </div>
-  )
+    <NavBar pokemonList={pokemonList} setPokemonIndex={setPokemonIndex}></NavBar>
+    <PokemonCard pokemon = {pokemonList[pokemonIndex]}/>
+  </div>
+  );
 }
 
 const pokemonList = [
@@ -31,17 +30,22 @@ const pokemonList = [
     imgSrc:"http://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png", //pokemon 2; 
   }, 
   {
-    name: "Squirtle", 
-    imgSrc: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png", //pokemon 3; 
+    name: "Venusaur", 
+    imgSrc: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png" //pokemon 3; 
   }, 
   {
-    name: "Pikachu",
-    imgSrc:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png", // pokemon 4; 
+    name: "Charmander",
+    imgSrc:"https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" // pokemon 4; 
   },
   {
-      name:"Mew", //pokemon 4; 
-      imgSrc:"https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png"
+      name:"Charmeleon", //pokemon 4; 
+      imgSrc:"https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png",//pokemon 5
   },
+  {
+    name: "Charizard",
+    imgSrc:"https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" //pokemon 6
+  },
+  
 
 ];
 
