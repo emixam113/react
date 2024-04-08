@@ -1,24 +1,37 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import PokemonCard from './components/PokemonCard'
 import NavBar from './components/NavBar'
 
+
 function App() {
+ 
+  useEffect(()=> {
+    alert('Hello, pokemon trainer');
+  }, [])
+
+ 
 
   const [pokemonIndex, setPokemonIndex] = useState(0);
   const handleClick = (event) => {
-  
-event.target.textContent === 'Précédent' ? setPokemonIndex(pokemonIndex-1): setPokemonIndex(pokemonIndex+1);
+    
  }
+ if(pokemonList[pokemonIndex].name ==="Pikachu"){
+  alert("Pika, pika");
+}
 
+
+ 
 
   return (
    <div>
+  
     <NavBar pokemonList={pokemonList} setPokemonIndex={setPokemonIndex}></NavBar>
     <PokemonCard pokemon = {pokemonList[pokemonIndex]}/>
   </div>
   );
 }
+
 
 const pokemonList = [
   {
@@ -45,7 +58,11 @@ const pokemonList = [
     name: "Charizard",
     imgSrc:"https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" //pokemon 6
   },
-  
+
+  {
+    name: "Pikachu", 
+    imgSrc:"https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" //pokemon 25
+  }
 
 ];
 
